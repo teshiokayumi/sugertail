@@ -1,0 +1,14 @@
+# エディタ・ツール設定
+.claude/
+
+# 素材の原本（サイトでは assets/img/ 内のコピーを使用）
+/3mail.png
+/asagi.png
+/yang.png
+/aika.png
+/mail.png
+
+# OS が生成するファイル
+Thumbs.db
+desktop.ini
+.DS_Store
