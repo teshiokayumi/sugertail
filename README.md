@@ -1,7 +1,7 @@
 # シュガーテイルへようこそ 公式サイト
 
 「シュガーテイルへようこそ」の公式情報サイト（静的サイト）です。
-小説・ショートアニメ・MV・イラストの各展開をまとめて紹介しています。
+小説・ショートアニメ・MV・イラスト・音楽（バンド「Suger Tail」）の各展開をまとめて紹介しています。
 
 ## 公開方法（GitHub Pages）
 
@@ -26,6 +26,7 @@
 │       ├── yang.png        楊弦月 キャラクタープロフィール
 │       ├── aika.png        御堂愛佳 キャラクタープロフィール
 │       ├── characters.png  三人のキャラクター設定シート
+│       ├── sugertail.png   バンド「Suger Tail」ビジュアル
 │       ├── mail.png        お問い合わせアイコン
 │       └── favicon.svg     ファビコン
 ├── irai.md                 制作用の原稿（サイトには含まれません）
@@ -37,6 +38,7 @@
 - **ABOUT** — 作品紹介、章構成、展開メディア
 - **CHARACTER** — 浅葱優／楊弦月／御堂愛佳（画像クリックで拡大表示）
 - **MOVIE** — MV 15本＋ショート動画プレイリスト
+- **BAND** — バンド「Suger Tail」／AISA Radio ALPS で先行配信中の楽曲
 - **STORY** — ピカピカ配信のショートアニメ 第一話〜第二十三話
 - **READ** — Xtoon（連載版）／FANZA・DLsite（完全版）
 - **CAST** — 出演キャスト
@@ -51,6 +53,9 @@
   最新作には `<span class="tag-new">NEW</span>` を付ける。
 - **話数を追加する** — `STORY` セクションの `<li>` をコピーし、
   リンク先URL・話数・あらすじを書き換える。
+- **楽曲を追加する** — `BAND` セクションの `.track-list` の `<li>` をコピーし、
+  AISA Radio ALPS の楽曲URL（`https://aisa.radioalps.com/music/track/XXXX`）・
+  番号・曲名を書き換える。
 - **お知らせを差し替える** — `NEW RELEASE` セクションの `.news-list` を編集する。
 
 ## 技術メモ
