@@ -27,6 +27,8 @@
 │       ├── aika.png        御堂愛佳 キャラクタープロフィール
 │       ├── characters.png  三人のキャラクター設定シート
 │       ├── sugertail.png   バンド「Suger Tail」ビジュアル
+│       ├── hero-band.jpg   トップ用に軽量化したバンドビジュアル
+│       ├── title.jpg       ゲーム「NeoTokyoBL」タイトルビジュアル
 │       ├── mail.png        お問い合わせアイコン
 │       └── favicon.svg     ファビコン
 ├── irai.md                 制作用の原稿（サイトには含まれません）
@@ -36,13 +38,17 @@
 ## 掲載内容
 
 - **ABOUT** — 作品紹介、章構成、展開メディア
+- **GAME** — ゲーム「NeoTokyoBL」（近日公開）
 - **CHARACTER** — 浅葱優／楊弦月／御堂愛佳（画像クリックで拡大表示）
-- **MOVIE** — MV 15本＋ショート動画プレイリスト
-- **BAND** — バンド「Suger Tail」／AISA Radio ALPS で先行配信中の楽曲
-- **STORY** — ピカピカ配信のショートアニメ 第一話〜第二十三話
-- **READ** — Xtoon（連載版）／FANZA・DLsite（完全版）
 - **CAST** — 出演キャスト
+- **STORY** — ピカピカ配信のショートアニメ 第一話〜第二十三話（章ごとに開閉）
+- **READ** — Xtoon（連載版）／FANZA・DLsite（完全版）
+- **MOVIE** — MV（最初の6本を表示し、ボタンで全件表示）＋ショート動画プレイリスト
+- **BAND** — バンド「Suger Tail」／AISA Radio ALPS で先行配信中の楽曲／公式グッズストア
 - **CONTACT** — お問い合わせ先
+
+公式グッズストア（https://sugertail.readdy.co/）へのリンクは、
+ヘッダー・トップの注目欄・NEW RELEASE・BAND・フッターの5か所にあります。
 
 ## 更新のしかた
 
@@ -57,6 +63,8 @@
   AISA Radio ALPS の楽曲URL（`https://aisa.radioalps.com/music/track/XXXX`）・
   番号・曲名を書き換える。
 - **お知らせを差し替える** — `NEW RELEASE` セクションの `.news-list` を編集する。
+- **ゲームのリリース情報を入れる** — `index.html` の `GAME` セクション冒頭のコメントに
+  更新箇所をまとめています（リリース日・対応機種・販売ページのボタン）。
 
 ## 技術メモ
 
