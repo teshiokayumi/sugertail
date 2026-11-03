@@ -28,10 +28,25 @@
   });
 
   /* ---- YouTube：サムネイルを先に表示し、クリックで再生 ---- */
+  var setThumb = function (box) {
+    box.style.backgroundImage =
+      'url(https://i.ytimg.com/vi/' + box.dataset.yt + '/hqdefault.jpg)';
+  };
+  var thumbObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            setThumb(entry.target);
+            thumbObserver.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '300px 0px' })
+    : null;
+
   document.querySelectorAll('.yt').forEach(function (box) {
     var id = box.dataset.yt;
-    box.style.backgroundImage =
-      'url(https://i.ytimg.com/vi/' + id + '/hqdefault.jpg)';
+    if (thumbObserver) thumbObserver.observe(box);
+    else setThumb(box);
 
     box.querySelector('.yt-play').addEventListener('click', function () {
       var iframe = document.createElement('iframe');
@@ -45,6 +60,29 @@
       box.appendChild(iframe);
     });
   });
+
+  /* ---- MV一覧：最初の6本のみ表示し、ボタンで全件を開閉 ---- */
+  var mvMore = document.getElementById('mvMore');
+  var mvCards = document.querySelectorAll('#mvGrid .mv-card');
+  var MV_LIMIT = 6;
+  if (mvCards.length > MV_LIMIT) {
+    var setMvOpen = function (open) {
+      mvCards.forEach(function (card, i) {
+        card.classList.toggle('is-collapsed', !open && i >= MV_LIMIT);
+      });
+      mvMore.setAttribute('aria-expanded', String(open));
+      mvMore.textContent = open
+        ? '一覧を閉じる'
+        : 'すべての動画を見る（全' + mvCards.length + '本）';
+    };
+    setMvOpen(false);
+    mvMore.hidden = false;
+    mvMore.addEventListener('click', function () {
+      var open = mvMore.getAttribute('aria-expanded') !== 'true';
+      setMvOpen(open);
+      if (!open) document.getElementById('movie').scrollIntoView();
+    });
+  }
 
   /* ---- ライトボックス（キャラクターシートの拡大表示） ---- */
   var lb = document.getElementById('lightbox');
@@ -85,7 +123,7 @@
 
   /* ---- スクロール連動のフェードイン ---- */
   var targets = document.querySelectorAll(
-    '.section-title, .about-grid, .media-card, .chara, .chara-sheet, .mv-card, .playlist-box, .chapter-title, .ep-list, .read-card, .cast-list, .news-list, .contact-box'
+    '.section-title, .about-grid, .media-rows, .game-visual, .game-body, .chara, .chara-sheet, .mv-card, .playlist-box, .chapter, .read-card, .cast-list, .news-list, .band-grid, .goods-ticket, .contact-box'
   );
   if (!('IntersectionObserver' in window)) return;
 
